@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-harbor: #123a33;
+  --color-harbor-deep: #0d2c26;
+  --color-harbor-soft: #1d4a42;
+  --color-harbor-line: #2a564d;
+  --color-paper: #f5f6f3;
+  --color-surface: #ffffff;
+  --color-sunken: #eef0ec;
+  --color-ink: #1b2420;
+  --color-muted: #5f6b65;
+  --color-faint: #8a948f;
+  --color-line: #dce1dc;
+  --color-stamp: #c98a12;
+  --color-stamp-ink: #7d5608;
+  --color-ok: #2f7a4f;
+  --color-fail: #b3402e;
+
+  /* Landing / navigation */
+  --color-night: #070b0a;
+  --color-night-raised: #0f1614;
+  --color-glow: #e3a73a;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+:focus-visible {
+  outline: 2px solid var(--color-stamp);
+  outline-offset: 2px;
+}
+
+@keyframes shimmer { from { opacity: .55 } to { opacity: 1 } }
+.skeleton { background: var(--color-sunken); border-radius: 4px; animation: shimmer 1s ease-in-out infinite alternate; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
